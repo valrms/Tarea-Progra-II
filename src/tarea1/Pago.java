@@ -25,8 +25,8 @@ public class Pago {
 
 
 class Efectivo extends Pago{
-    public Efectivo(float Getmonto){
-        super(Getmonto);
+    public Efectivo(float monto){
+        super(monto);
     }
     public float calcDevolucion(float dinero){
         if (Getmonto() == dinero) {
@@ -42,15 +42,14 @@ class Efectivo extends Pago{
 class Transferencia extends Pago{
     private String banco;
     private String numCuenta;
-    public Transferencia(float Getmonto, String banco, String numCuenta){
-        super(Getmonto);
+    public Transferencia(float monto, String banco, String numCuenta){
+        super(monto);
         this.banco = banco;
         this.numCuenta = numCuenta;
     }
     public String Getbanco(){
         return banco;
     }
-    
     public String GetnumCuenta(){
         return numCuenta;
     }
@@ -61,20 +60,18 @@ class Transferencia extends Pago{
     
 }
 
-
-
 class Tarjeta extends Pago{
     private String tipo;
     private String numTransaccion;
-    public Tarjeta(float Getmonto, String tipo, String numTransaccion){
-        super(Getmonto);
+    public Tarjeta(float monto, String tipo, String numTransaccion){
+        super(monto);
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }
     public String Gettipo(){
-        if (tipo == "credito") {
+        if ("credito".equals(tipo)) {
             return "credito";
-        } else if (tipo == "debito"){
+        } else if ("debito".equals(tipo)){
             return "debito";
         } else {
             return "tarjeta no valida";
