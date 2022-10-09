@@ -2,27 +2,17 @@ package tarea1;
 
 import java.util.Date;
 
-class Direccion {
-    private String direccion;
-    public Direccion(String direccion){
-        this.direccion = direccion;
-    }
-    public String getDireccion() {
-        return direccion;
-    }
-}
-
 public class DocTributario {
     private String numero;
     private String rut;
-    private Direccion local;
     private Date fecha;
+    private Direccion Dlocal;
     
-    public DocTributario (String numero, String rut, Direccion direccion){
+    public DocTributario (String numero, String rut, String direccion){
         this.numero = numero;
         this.rut = rut;
         fecha = new Date();
-        local = direccion;
+        Dlocal = new Direccion(direccion);
     }
     
     protected String GetNumero(){
@@ -33,26 +23,26 @@ public class DocTributario {
         return rut;
     }
      
-      protected Direccion GetDireccion(){
-        return local;
-    }
       protected Date Getfecha(){
         return fecha;
     }
+      protected Direccion GetDireccion(){
+        return Dlocal;
+    }
     @Override
         public String toString(){
-            return "numero: " + GetNumero() + "Rut: " + GetRut() + "Direccion: " + GetDireccion() + "Fecha: " + Getfecha();
+            return "numero: " + GetNumero() + "Rut: " + GetRut() + "Direccion del local: " +  GetDireccion() + "Fecha: " + Getfecha();
     } 
 }
 
 class Boleta extends DocTributario{
-    public Boleta(String numero, String rut, Direccion direccion){
+    public Boleta(String numero, String rut, String direccion){
         super(numero,rut,direccion);
     }
 }
 
 class Factura extends DocTributario{
-    public Factura (String numero, String rut, Direccion direccion){
+    public Factura (String numero, String rut, String direccion){
         super(numero,rut,direccion);
     }
 }
