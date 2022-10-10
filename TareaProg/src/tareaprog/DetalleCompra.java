@@ -25,7 +25,7 @@ public class DetalleCompra {
     
     public void adding (int w, Articulo s) {
         
-        for (int i = cantidad; i < w; i++) {
+        for (int i = cantidad; i < w+cantidad; i++) {
             
             buying_List.add(s);
         }
@@ -90,7 +90,6 @@ public class DetalleCompra {
 class OrdenCompra {
     
     LocalDateTime date = LocalDateTime.now();
-    public String estado;
     private DetalleCompra ca;
     
     public OrdenCompra (DetalleCompra m) {
@@ -118,5 +117,10 @@ class OrdenCompra {
         return(ca.calcPeso());
     } 
     
+    public LocalDateTime darFecha() {
+        
+        return(date);
+        
+    }
 }
 
