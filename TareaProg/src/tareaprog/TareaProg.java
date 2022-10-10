@@ -4,6 +4,10 @@ package tareaprog;
 public class TareaProg {
 
     public static void main(String[] args) {
+        
+        Cliente Cliente1 = new Cliente("carlitos","202073451-k","la casa de carlitos"); 
+        Cliente Cliente2 = new Cliente("matias","202178434-4","la casa de matias");
+        
         Articulo articulo = new Articulo(5, "silla", "marron", 80000);
         DetalleCompra details = new DetalleCompra (4, articulo);
         details.adding(4, articulo);
